@@ -1,16 +1,13 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import Map from './components/map'
 import './App.css'
-import Debounce from './components/debounce'
+import AllRoutes from './components/Routes/AllRoutes'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <Map></Map>
-     {/* <Debounce></Debounce> */}
+     <AllRoutes></AllRoutes>
     </div>
   )
 }
