@@ -10,10 +10,7 @@ const Login = () => {
 
     const navigate = useNavigate()
 
-    const { setUserName, setToken } = useContext(AuthContext);
-    // console.log('setToken:', setToken)
-    // console.log('setUserName:', setUserName)
-    // console.log('name:', name)
+    const { status, statusChangeToggle, token, setToken, handleLogout, name, setName } = useContext(AuthContext)
 
     const [login, setLogin] = useState({
         email: "",
@@ -42,8 +39,10 @@ const Login = () => {
             if (data.user.email != "") {
                 alert('Login Successful')
                 setToken(data.token)
-                setUserName(data.user.name)
+                setName(data.user.name)
+                statusChangeToggle()
                 navigate('/Home')
+
                 // handleLogin(data.token, data.user.name)
             }
             else {
@@ -68,7 +67,10 @@ const Login = () => {
     return (
         <>
             <div className='LoginMainBox'>
-            <h1>Log In</h1>
+                <h1>Log In</h1>
+                <h4>*Login Credentials*</h4>
+                <p>Email: prajwal@gmail.com</p>
+                <p>Password: Prajwal@12345</p>
 
                 <div className='idPassBox'>
                     <label>Email</label>

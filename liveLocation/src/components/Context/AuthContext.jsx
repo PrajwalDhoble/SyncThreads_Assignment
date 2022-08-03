@@ -4,18 +4,23 @@ import React, { useState } from "react";
 const AuthContext = React.createContext();
 
 const AuthContextProvider = ({ children }) => {
-    const [token, setToken] = useState("");
-    const [userName, setUserName] = useState('')
+    const [status, setStatus] = useState(false)
+    const [token, setToken] = useState('')
+    const [name, setName] = useState('')
 
 
 
-    const handleLogout = () => {
+    const statusChangeToggle = () => {
         //  set token back to " " once logged out
-        setToken("")
+        setStatus(true)
 
     };
 
-    const value = { setUserName, setToken, handleLogout, token, userName };
+    const handleLogout = () => {
+        setToken('')
+    }
+
+    const value = { status, statusChangeToggle, token, setToken, handleLogout, name, setName };
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

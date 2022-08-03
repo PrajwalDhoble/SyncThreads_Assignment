@@ -19,7 +19,7 @@ const AllRoutes = () => {
 
 
                 <Route exact path='/' element={<Login />} />
-                <Route exact path='/Home' element={<Cards />} />
+                <Route exact path='/home' element={<Cards />} />
                 <Route exact path='/nagpur' element={<Nagpur></Nagpur>}></Route>
                 <Route exact path='/delhi' element={<Delhi></Delhi>}></Route>
                 <Route exact path='/bengluru' element={<Bengluru></Bengluru>}></Route>
