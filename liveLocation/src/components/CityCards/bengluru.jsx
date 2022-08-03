@@ -1,4 +1,4 @@
-
+//This will show the map of particular city after clicking
 
 import React from 'react'
 

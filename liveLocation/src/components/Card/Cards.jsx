@@ -15,7 +15,7 @@ function Cards() {
     return (
 
         <>
-
+            {/* will check if user is logged in or not */}
             {token ?
 
                 <div className="Cards">
@@ -24,6 +24,7 @@ function Cards() {
                     <h4 style={{ padding: "10px", backgroundColor: "Black", borderRadius: "10px", fontStyle: "italic", cursor: "pointer", color: "white" }} onClick={() => handleLogout()}>For log out click here...</h4>
                     <br></br>
                     <br></br>
+                    {/* if user is logged in all city cards will show otherwise not */}
                     <NavLink to="/nagpur" style={{ padding: "30px", backgroundColor: "Black", borderRadius: "10px", fontStyle: "italic" }}>
                         Nagpur
                     </NavLink>
@@ -62,6 +63,7 @@ function Cards() {
                     <NavLink to="/delhi" style={{ padding: "30px", backgroundColor: "Black", borderRadius: "10px", fontStyle: "italic" }}>
                         Delhi
                     </NavLink>
+                    {/* if user not logged in then this warning will show */}
                 </div> : <Link to='/'>"User not logged in"</Link>}
 
         </>
